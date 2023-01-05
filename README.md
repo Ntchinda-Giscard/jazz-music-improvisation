@@ -1,29 +1,16 @@
 # Improvise a Jazz Solo with an LSTM Network
 
-Welcome to your final programming assignment of this week! In this notebook, you will implement a model that uses an LSTM to generate music. At the end, you'll even be able to listen to your own music! 
+Welcome to this awesome programming project ! In this notebook, you will implement a model that uses an LSTM to generate music. At the end, you'll even be able to listen to your own music! 
 
 <img src="images/jazz.jpg" style="width:450;height:300px;">
 
-**By the end of this assignment, you'll be able to:**
+**The objectives are to be able to:**
 
 - Apply an LSTM to a music generation task
 - Generate your own jazz music with deep learning
 - Use the flexible Functional API to create complex models
 
 This is going to be a fun one. Let's get started! 
-
-## Important Note on Submission to the AutoGrader
-
-Before submitting your assignment to the AutoGrader, please make sure you are not doing the following:
-
-1. You have not added any _extra_ `print` statement(s) in the assignment.
-2. You have not added any _extra_ code cell(s) in the assignment.
-3. You have not changed any of the function parameters.
-4. You are not using any global variables inside your graded exercises. Unless specifically instructed to do so, please refrain from it and use the local variables instead.
-5. You are not changing the assignment code where it is not required, like creating _extra_ variables.
-
-If you do any of the following, you will get something like, `Grader not found` (or similarly unexpected) error upon submitting your assignment. Before asking for help/debugging the errors in your assignment, check for these first. If this is the case, and you don't remember the changes you have made, you can get a fresh copy of the assignment by following these [instructions](https://www.coursera.org/learn/nlp-sequence-models/supplement/qHIve/h-ow-to-refresh-your-workspace).
-
 
 ## Table of Contents
 
@@ -35,8 +22,8 @@ If you do any of the following, you will get something like, `Grader not found` 
     - [Exercise 1 - djmodel](#ex-1)
 - [3 - Generating Music](#3)
     - [3.1 - Predicting & Sampling](#3-1)
-        - [Exercise 2 - music_inference_model](#ex-2)
-        - [Exercise 3 - predict_and_sample](#ex-3)
+        - [2 - music_inference_model](#ex-2)
+        - [ 3 - predict_and_sample](#ex-3)
     - [3.2 - Generate Music](#3-2)
 - [4 - References](#4)   
 
@@ -44,28 +31,26 @@ If you do any of the following, you will get something like, `Grader not found` 
 <a name='1'></a>
 ## 1 - Problem Statement
 
-You would like to create a jazz music piece specially for a friend's birthday. However, you don't know how to play any instruments, or how to compose music. Fortunately, you know deep learning and will solve this problem using an LSTM network! 
+We would create a jazz music piece specially for a friend's birthday. However, you don't know how to play any instruments, or how to compose music. Fortunately, you know deep learning and will solve this problem using an LSTM network! 
 
 You will train a network to generate novel jazz solos in a style representative of a body of performed work. 😎🎷
 
 <a name='1-1'></a>
 ### 1.1 - Dataset
 
-To get started, you'll train your algorithm on a corpus of Jazz music. Run the cell below to listen to a snippet of the audio from the training set:
+To get started, lets train your algorithm on a corpus of Jazz music.
 
 The preprocessing of the musical data has been taken care of already, which for this notebook means it's been rendered in terms of musical "values." 
 
 #### What are musical "values"? (optional)
-You can informally think of each "value" as a note, which comprises a pitch and duration. For example, if you press down a specific piano key for 0.5 seconds, then you have just played a note. In music theory, a "value" is actually more complicated than this -- specifically, it also captures the information needed to play multiple notes at the same time. For example, when playing a music piece, you might press down two piano keys at the same time (playing multiple notes at the same time generates what's called a "chord"). But you don't need to worry about the details of music theory for this assignment. 
+You can informally think of each "value" as a note, which comprises a pitch and duration. For example, if you press down a specific piano key for 0.5 seconds, then you have just played a note. In music theory, a "value" is actually more complicated than this -- specifically, it also captures the information needed to play multiple notes at the same time. For example, when playing a music piece, you might press down two piano keys at the same time (playing multiple notes at the same time generates what's called a "chord"). But you don't need to worry about the details of music theory for this project. 
 
 #### Music as a sequence of values
 
-* For the purposes of this assignment, all you need to know is that you'll obtain a dataset of values, and will use an RNN model to generate sequences of values. 
+* For the purposes of this project, all you need to know is that you'll obtain a dataset of values, and will use an RNN model to generate sequences of values. 
 * Your music generation system will use 90 unique values. 
 
-Run the following code to load the raw music data and preprocess it into values. This might take a few minutes!
-
-You have just loaded the following:
+We have to load:
 
 - `X`: This is an (m, $T_x$, 90) dimensional array. 
     - You have m training examples, each of which is a snippet of $T_x =30$ musical values. 
@@ -215,4 +200,4 @@ The ideas presented in this notebook came primarily from three computational mus
 - Robert Keller and David Morrison, 2007, [A Grammatical Approach to Automatic Improvisation](http://smc07.uoa.gr/SMC07%20Proceedings/SMC07%20Paper%2055.pdf)
 - François Pachet, 1999, [Surprising Harmonies](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.5.7473&rep=rep1&type=pdf)
 
-Finally, a shoutout to François Germain for valuable feedback.
+Finally, a shoutout to @... for valuable feedback.
